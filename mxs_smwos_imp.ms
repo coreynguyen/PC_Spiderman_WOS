@@ -186,7 +186,7 @@ rollout smwos "SMWOS" (
 	
 	fn read file verbose:true mscale:39.3701 = (
 		
-		if MatchPattern file pattern:"*.component*.MESH" then (
+		if file != undefined and file != "" and MatchPattern file pattern:"*.component*.MESH" then (
 			
 			local fname = getFilenameFile (getFilenameFile file)
 			local fpath = getFilenamePath file
@@ -382,4 +382,5 @@ smwos.read(
 	"C:\\Users\\Corey\\Downloads\\blackcat\\s3_blackcat000.component0.MESH"
 	"C:\\Users\\Corey\\Downloads\\blackcat\\s3_blackcat_claw000.component1.MESH"
 	"C:\\Users\\Corey\\Downloads\\blackcat\\s1_wolverine000.component0.MESH"
+	GetOpenFileName caption:"Open MESH" types: "Package (*.MESH)|*.component0.MESH|All files (*.*)|*.*|"
 	)
